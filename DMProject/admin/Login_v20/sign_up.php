@@ -48,25 +48,25 @@
 					</span>
 					
 					<div class="wrap-input100  validate-input" data-validate = "Username is required">
-						<input class="input100" type="text" name="username">
+						<input class="input100" type="text" name="username" required />
 						<span class="label-input100">Username</span>
 					</div>
 					
 					
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass">
+						<input class="input100" type="password" name="pass" required />
 						<span class="label-input100">Password</span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate="Re-enter Password is required">
-						<input class="input100" type="password" name="repass">
+						<input class="input100" type="password" name="repass" required />
 						<span class="label-input100">Re-enter Password</span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate="Email is required">
-						<input class="input100" type="mail" name="email">
+						<input class="input100" type="mail" name="email" required />
 						<span class="label-input100">Email</span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate="Contact Number is required">
-						<input class="input100" type="tel" name="cnt">
+						<input class="input100" type="tel" name="cnt" required />
 						<span class="label-input100">Contact Number</span>
 					</div>
 					<div class="container-login100-form-btn">

@@ -177,7 +177,7 @@
                                         <div class="col-md-12">
         									<span class="field-title"> Total Bill (Inclusive Of Tax): </span>
         									<div class="form-group">
-        										<input type="text"  id="" class="form-control" name="total" readonly value="<?php $tx = $total + (($total * 5) / 100); echo number_format($tx,2) ; ?>" style="background-color: #d9d9d9; border: 1px solid black;">
+        										<input type="text"  id="" class="form-control" name="total" readonly value="<?php echo number_format($total,2) ; ?>" style="background-color: #d9d9d9; border: 1px solid black;">
         										<div class="help-block with-errors"></div>
         									</div>
         								</div>
