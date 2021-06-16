@@ -91,8 +91,6 @@
 
 				while($r = mysqli_fetch_array($exec))
 				{
-				    $q2 = "select * from menu where type = $id";
-				    $e = mysqli_query($con,$q2);
 				    $prio = $r['priority'];
 				    
 				  

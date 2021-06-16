@@ -10,12 +10,6 @@
 		$takeaway  = $_POST['takeaway'];
 		$type = $_POST['type'];
 		$price = $_POST['price'];
-
-		//$filename = $_FILES['img']['name'];
-		//$temp_file = $_FILES['img']['tmp_name'];
-
-		//$folder = "menu/".$filename;
-		//move_uploaded_file($temp_file,$folder);
 		
 		$cat_id = mysqli_query($con,"select cid from category where name='$type'");
 		$r5 = mysqli_fetch_array($cat_id);
@@ -31,7 +25,6 @@
 					echo myslqi_error($con);
 				}
 				else{
-				    //header("location:view_menu.php");
 				    echo '1';
 				}
 			}

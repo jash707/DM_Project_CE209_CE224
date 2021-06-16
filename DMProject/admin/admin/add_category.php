@@ -8,7 +8,7 @@
            $temp_file = $_FILES["image1"]["tmp_name"];
         
            $folder = "menu_img/".$filename;
-           
+			if(move_uploaded_file($_FILES["image1"]["tmp_name"], $folder)){
             $q = mysqli_query($con,"insert into category(name,img) values('$c','$folder')");
             if($q){
                 header("location:view_menu.php");
@@ -16,6 +16,7 @@
             else{
                 echo 'error';
             }
+			}
         }
 ?>
 <html>

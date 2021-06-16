@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 12, 2021 at 04:57 PM
+-- Generation Time: Jun 16, 2021 at 01:14 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `name` varchar(100) NOT NULL,
   `img` varchar(250) NOT NULL,
   PRIMARY KEY (`cid`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `category`
@@ -61,9 +61,7 @@ INSERT INTO `category` (`cid`, `name`, `img`) VALUES
 (20, 'Kathiyawadi', 'menu_img/kathiyawadi.jpg'),
 (21, 'Continental', 'menu_img/c.jpg'),
 (22, 'Hot Beverages', 'menu_img/tea.jpg'),
-(23, 'Appetizer', 'menu_img/lime water.jpg'),
-(24, 'Ice Cream', 'menu_img/ice.jpg'),
-(25, 'Thaali', 'menu_img/download.jpg');
+(23, 'Appetizer', 'menu_img/lime water.jpg');
 
 -- --------------------------------------------------------
 
@@ -81,14 +79,16 @@ CREATE TABLE IF NOT EXISTS `food_order` (
   PRIMARY KEY (`foid`),
   KEY `user` (`userid`),
   KEY `mid` (`mid`)
-) ENGINE=InnoDB AUTO_INCREMENT=142 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=152 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `food_order`
 --
 
 INSERT INTO `food_order` (`foid`, `userid`, `mid`, `quantity`, `order_type`) VALUES
-(141, 81, 162, 1, 'takeaway');
+(149, 86, 173, 3, 'takeaway'),
+(150, 86, 169, 2, 'takeaway'),
+(151, 87, 160, 1, 'takeaway');
 
 -- --------------------------------------------------------
 
@@ -183,7 +183,6 @@ INSERT INTO `menu` (`mid`, `name`, `image`, `description`, `priority`, `restaura
 (82, 'Palak Paneer', '', '', 2, 'YES', 'YES', 150, 7),
 (83, 'Mutter Paneer', '', '', 2, 'YES', 'YES', 130, 7),
 (84, 'Paneer Bhurji', '', '', 3, 'YES', 'YES', 200, 7),
-(85, 'Yajmaan Special Paneer', '', '', 2, 'YES', 'YES', 230, 7),
 (86, 'Mix Veg.', '', '', 2, 'YES', 'YES', 100, 8),
 (87, 'Veg. Makhanwala', '', '', 2, 'YES', 'YES', 120, 8),
 (88, 'Veg. Kolhapuri', '', '', 2, 'YES', 'YES', 130, 8),
@@ -200,7 +199,6 @@ INSERT INTO `menu` (`mid`, `name`, `image`, `description`, `priority`, `restaura
 (99, 'Veg. Garlic Masala', '', '', 2, 'YES', 'YES', 140, 8),
 (100, 'Veg. Pahadi', '', '', 2, 'YES', 'YES', 160, 8),
 (101, 'Veg. Do Payaza', '', '', 2, 'YES', 'YES', 140, 8),
-(102, 'Yajmaan Special Vegetable', '', '', 4, 'YES', 'YES', 200, 8),
 (103, 'Malai Kofta Sweet', '', '', 2, 'YES', 'YES', 150, 9),
 (104, 'Veg. Kofta', '', '', 3, 'YES', 'YES', 140, 9),
 (105, 'Nargis Kofta', '', '', 2, 'YES', 'YES', 145, 9),
@@ -233,7 +231,6 @@ INSERT INTO `menu` (`mid`, `name`, `image`, `description`, `priority`, `restaura
 (132, 'Chinese Sizzler', '', '', 1, 'YES', 'YES', 280, 14),
 (133, 'Paneer Stick Sizzler', '', '', 4, 'YES', 'YES', 300, 14),
 (134, 'Paneer Shashlik Sizzler', '', '', 1, 'YES', 'YES', 300, 14),
-(135, 'Yajmaan Special Sizzler', '', '1 Cold Drink + Roasted Papad + Salad', 1, 'YES', 'YES', 500, 14),
 (136, 'Plain Roti', '', '', 1, 'YES', 'YES', 20, 15),
 (137, 'Butter Roti ', '', '', 3, 'YES', 'YES', 25, 15),
 (138, 'Missi Roti', '', '', 2, 'YES', 'YES', 35, 15),
@@ -259,7 +256,6 @@ INSERT INTO `menu` (`mid`, `name`, `image`, `description`, `priority`, `restaura
 (158, 'Handi Dum Biryani', '', '', 3, 'YES', 'YES', 130, 16),
 (159, 'Kashmiri Pulao(Sweet)', '', '', 2, 'YES', 'YES', 110, 16),
 (160, 'Kolhapuri Biryani', '', '', 1, 'YES', 'YES', 130, 16),
-(161, 'Yajmaan Special Biryani', '', '', 2, 'YES', 'YES', 150, 16),
 (162, 'Dal Fry ', '', '', 1, 'YES', 'YES', 80, 17),
 (163, 'Dal Tadka', '', '', 1, 'YES', 'YES', 100, 17),
 (164, 'Dal Makhani', '', '', 2, 'YES', 'YES', 110, 17),
@@ -276,7 +272,6 @@ INSERT INTO `menu` (`mid`, `name`, `image`, `description`, `priority`, `restaura
 (175, 'Margarita Pizza', '', '', 1, 'YES', 'YES', 120, 18),
 (176, 'Italian Pizza', '', '', 1, 'YES', 'YES', 120, 18),
 (177, 'Mexican Pizza', '', '', 1, 'YES', 'YES', 130, 18),
-(178, 'Yajmaan Special Pizza', '', '', 2, 'YES', 'YES', 140, 18),
 (179, 'Arrabbiata Pasta', '', '', 1, 'YES', 'YES', 220, 19),
 (180, 'Pink Sauce Pasta', '', '', 3, 'YES', 'YES', 230, 19),
 (181, 'Alfredo Pasta', '', '', 1, 'YES', 'YES', 230, 19),
@@ -312,56 +307,7 @@ INSERT INTO `menu` (`mid`, `name`, `image`, `description`, `priority`, `restaura
 (211, 'Fresh Lemon Soda (Sweet / Salt)', '', '', 2, 'YES', 'YES', 40, 23),
 (212, 'Mint Lemon Water (Sweet)', '', '', 2, 'YES', 'YES', 35, 23),
 (213, 'Mineral Water', '', '', 2, 'YES', 'YES', 20, 23),
-(214, 'Cold Drink 200ml.', '', '', 2, 'YES', 'YES', 20, 23),
-(215, 'Fix Thaali', '', '2 Subji, 3 Butter Roti, Dal Fry, Jeera Rice, Roasted Papad, Butter Milk', 2, 'YES', 'YES', 120, 25),
-(216, 'Special Thaali', '', 'Paneer Subji, Veg. Subji, Butter Roti 3 / Tawa Roti 4 / Tandoori Roti 3, Dal Fry, Jeera Rice & Pulao, Sweet, Roasted Papad, Butter Milk, Onion & Pickle', 2, 'YES', 'YES', 140, 25);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `slot`
---
-
-DROP TABLE IF EXISTS `slot`;
-CREATE TABLE IF NOT EXISTS `slot` (
-  `time` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `slot`
---
-
-INSERT INTO `slot` (`time`) VALUES
-('08:00:00'),
-('09:00:00'),
-('10:00:00'),
-('11:00:00'),
-('12:00:00'),
-('13:00:00'),
-('14:00:00'),
-('15:00:00'),
-('16:00:00'),
-('17:00:00'),
-('18:00:00'),
-('19:00:00'),
-('20:00:00'),
-('21:00:00'),
-('22:00:00'),
-('08:00:00'),
-('09:00:00'),
-('10:00:00'),
-('11:00:00'),
-('12:00:00'),
-('13:00:00'),
-('14:00:00'),
-('15:00:00'),
-('16:00:00'),
-('17:00:00'),
-('18:00:00'),
-('19:00:00'),
-('20:00:00'),
-('21:00:00'),
-('22:00:00');
+(214, 'Cold Drink 200ml.', '', '', 2, 'YES', 'YES', 20, 23);
 
 -- --------------------------------------------------------
 
@@ -381,14 +327,15 @@ CREATE TABLE IF NOT EXISTS `takeaway_user` (
   `time_of_delivery` time NOT NULL,
   `payment_mode` varchar(100) NOT NULL,
   PRIMARY KEY (`tuid`)
-) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `takeaway_user`
 --
 
 INSERT INTO `takeaway_user` (`tuid`, `name`, `email`, `mobile_no`, `date_time`, `total_bill`, `status`, `time_of_delivery`, `payment_mode`) VALUES
-(81, 'jash', 'jash.tamakuwala777@gmail.com', '9723912479', '2021-06-12 21:46:31', 84, 2, '20:00:00', 'cash');
+(86, 'jash', 'jash.tamakuwala777@gmail.com', '9787546532', '2021-06-13 14:32:23', 460, 2, '08:00:00', 'cash'),
+(87, 'jash', 'jash.tamakuwala777@gmail.com', '9787546532', '2021-06-16 18:28:36', 130, 0, '08:16:00', 'cash');
 
 -- --------------------------------------------------------
 
@@ -411,12 +358,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`userid`, `email`, `contact`, `password`) VALUES
-('krunal', '20ceubd013@ddu.ac.in', '8795612345', 'krunal'),
-('yajmanre', 'jaimikc@gmail.com', '7895135896', 'yajman!123'),
-('jash', 'jash.tamakuwala777@gmail.com', '9723912479', 'jash'),
-('kk', 'jash.tamakuwala@yahoo.com', '5468754256', 'kk1234'),
-('mr.kk', 'krunalkishnadwala786@gmail.com', '7898878999', 'kk12345'),
-('vraj', 'vrajsoni97@gmail.com', '7895226999', 'vraj');
+('jash', 'jash.tamakuwala777@gmail.com', '9787546532', '1234');
 
 --
 -- Constraints for dumped tables

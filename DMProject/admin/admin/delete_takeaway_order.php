@@ -124,7 +124,7 @@
                 </table>
                 <button  style="margin-left: 40%; background-color: #f21f13; color: white;" type="submit" name="delete"   class="btn btn-primary"> Delete </button>
                <form method="post" action="#">
-                   <button  style="margin-left: 40%;" type="submit" name="cancel"   class="btn btn-primary"> Cancel </button>
+                   <button  style="margin-left: 3%;" type="submit" name="cancel"   class="btn btn-primary"> Cancel </button>
                </form>
             </form>
     </body>

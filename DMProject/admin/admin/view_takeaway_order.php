@@ -4,7 +4,6 @@
     
     $today = date('Y-m-d');
 
-   // $query = "select * from takeaway_user where status = 0 AND date_time = '$today' order by date_time DESC";
     $q = "select * from takeaway_user where status = 0 order by tuid DESC";
     $exec = mysqli_query($con,$q);
 ?>
